@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nusantara Rental | Rental Mobil Jakarta, Bandung, Jogja &amp; Surabaya</title>
+  <meta name="description" content="Nusantara Rental menyediakan rental mobil terpercaya di Jakarta, Bandung, Jogja dan Surabaya dengan pilihan kendaraan lengkap dan pemesanan mudah melalui WhatsApp.">
+  <meta name="keywords" content="rental mobil, sewa mobil, rental mobil jakarta, rental mobil bandung, rental mobil jogja, rental mobil yogyakarta, rental mobil surabaya, sewa innova, sewa avanza, sewa alphard, sewa hiace, lepas kunci, dengan sopir">
+  <meta name="author" content="Nusantara Rental">
+  <meta name="theme-color" content="#0B1F3A">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nusantara Rental">
+  <meta property="og:title" content="Nusantara Rental | Rental Mobil Jakarta, Bandung, Jogja & Surabaya">
+  <meta property="og:description" content="Temukan Mobil Pilihanmu, Jelajahi Indonesia. Rental mobil terpercaya dengan pemesanan mudah melalui WhatsApp.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Font (opsional). Jika offline, otomatis memakai font sistem. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#katalog">Langsung ke katalog mobil</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="brand" data-route aria-label="Beranda">
+        <span class="brand__mark">
+          <img src="assets/logo.png" alt="" class="brand__logo" data-logo width="40" height="40">
+        </span>
+        <span class="brand__text">
+          <strong data-site-name>Nusantara Rental</strong>
+          <small>Car Rental</small>
+        </span>
+      </a>
+
+      <nav class="nav__menu" aria-label="Navigasi utama">
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#home" data-route data-nav="home">Home</a></li>
+          <li><a href="#katalog" data-route data-nav="katalog">Rental Mobil</a></li>
+          <!-- kota diisi otomatis oleh app.js -->
+          <li class="nav__cities" id="navCities"></li>
+          <li><a href="#tentang" data-route data-nav="tentang">Tentang Kami</a></li>
+          <li><a href="#faq" data-route data-nav="faq">FAQ</a></li>
+          <li><a href="#kontak" data-route data-nav="kontak">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="#" class="btn btn--wa btn--sm nav__wa" data-wa="general" target="_blank" rel="noopener">
+          <span data-icon="whatsapp"></span><span>WhatsApp</span>
+        </a>
+        <button class="nav__burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__backdrop" data-close-drawer></div>
+    <aside class="drawer__panel" role="dialog" aria-label="Menu">
+      <div class="drawer__head">
+        <strong data-site-name>Nusantara Rental</strong>
+        <button class="icon-btn" data-close-drawer aria-label="Tutup menu"><span data-icon="x"></span></button>
+      </div>
+      <ul class="drawer__links" id="drawerLinks"></ul>
+      <a href="#" class="btn btn--wa btn--block" data-wa="general" target="_blank" rel="noopener">
+        <span data-icon="whatsapp"></span> Chat WhatsApp
+      </a>
+    </aside>
+  </div>
+
+  <!-- ================= HOME VIEW ================= -->
+  <main id="viewHome" class="view">
+
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="hero__bg" id="heroBg" aria-hidden="true">
+        <div class="hero__grid"></div>
+        <div class="hero__glow hero__glow--a"></div>
+        <div class="hero__glow hero__glow--b"></div>
+        <div class="hero__road"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow eyebrow--light anim-in" style="--d:0ms">
+            <span class="dot"></span> Rental mobil premium · <span data-city-count>4</span> kota
+          </span>
+          <h1 id="heroTitle" class="hero__title anim-in" style="--d:80ms">
+            Sewa Mobil Lebih Mudah, <span class="text-gold">Perjalanan Lebih Nyaman.</span>
+          </h1>
+          <p class="hero__sub anim-in" style="--d:160ms" id="heroSub">
+            Temukan kendaraan pilihanmu di Jakarta, Bandung, Jogja, dan Surabaya.
+          </p>
+          <div class="hero__cta anim-in" style="--d:240ms">
+            <a href="#katalog" class="btn btn--gold btn--lg" data-route>
+              <span data-icon="search"></span> Cari Mobil
+            </a>
+            <a href="#" class="btn btn--glass btn--lg" data-wa="general" target="_blank" rel="noopener">
+              <span data-icon="whatsapp"></span> Hubungi WhatsApp
+            </a>
+          </div>
+          <ul class="hero__trust anim-in" style="--d:320ms">
+            <li><span data-icon="shield"></span> Unit terawat &amp; berasuransi</li>
+            <li><span data-icon="wallet"></span> Harga transparan</li>
+            <li><span data-icon="headset"></span> Respon cepat via WhatsApp</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual anim-in" style="--d:200ms" aria-hidden="true">
+          <div class="hero__halo"></div>
+          <img class="hero__car" id="heroCar" alt="" width="800" height="360">
+          <div class="float-card float-card--a">
+            <span class="float-card__icon"><span data-icon="star"></span></span>
+            <div><strong id="heroMinPrice">Rp 280.000</strong><small>mulai / hari</small></div>
+          </div>
+          <div class="float-card float-card--b">
+            <span class="float-card__icon float-card__icon--wa"><span data-icon="whatsapp"></span></span>
+            <div><strong>Booking Instan</strong><small>konfirmasi via WhatsApp</small></div>
+          </div>
+          <div class="float-card float-card--c">
+            <span class="float-card__icon"><span data-icon="car"></span></span>
+            <div><strong><span id="heroUnitCount">16</span>+ unit</strong><small>siap jalan</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH / BOOKING BAR -->
+    <section class="search-wrap" aria-label="Cari mobil">
+      <div class="container">
+        <form class="search-card" id="searchForm" novalidate>
+          <div class="search-card__field">
+            <label for="sLocation"><span data-icon="pin"></span> Lokasi</label>
+            <select id="sLocation" name="location"></select>
+          </div>
+          <div class="search-card__field">
+            <label for="sStart"><span data-icon="calendar"></span> Tanggal Mulai</label>
+            <input type="date" id="sStart" name="start">
+          </div>
+          <div class="search-card__field">
+            <label for="sEnd"><span data-icon="calendar"></span> Tanggal Selesai</label>
+            <input type="date" id="sEnd" name="end">
+          </div>
+          <div class="search-card__field">
+            <label for="sType"><span data-icon="car"></span> Tipe Mobil</label>
+            <select id="sType" name="type"></select>
+          </div>
+          <button type="submit" class="btn btn--gold btn--lg search-card__btn">
+            <span data-icon="search"></span> Cari Mobil
+          </button>
+          <p class="search-card__error" id="searchError" role="alert" hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- KOTA -->
+    <section class="section section--tight" id="lokasi" aria-labelledby="citiesTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Lokasi Layanan</span>
+          <h2 id="citiesTitle">Pilih Kota Tujuanmu</h2>
+          <p>Armada kami siap di beberapa kota besar Indonesia, lengkap dengan layanan antar-jemput unit.</p>
+        </div>
+        <div class="city-grid" id="cityGrid"></div>
+      </div>
+    </section>
+
+    <!-- KATALOG -->
+    <section class="section section--gray" id="katalog" aria-labelledby="catalogTitle">
+      <div class="container">
+        <div class="section-head section-head--row reveal">
+          <div>
+            <span class="eyebrow">Katalog</span>
+            <h2 id="catalogTitle">Mobil Pilihan Nusantara Rental</h2>
+            <p>Bandingkan unit, cek harga, lalu pesan langsung melalui WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="toolbar reveal" id="toolbar">
+          <div class="toolbar__search">
+            <span data-icon="search"></span>
+            <input type="search" id="fQuery" placeholder="Cari mobil..." aria-label="Cari mobil" autocomplete="off">
+          </div>
+          <button type="button" class="btn btn--light toolbar__toggle" id="filterToggle" aria-expanded="false" aria-controls="filterPanel">
+            <span data-icon="filter"></span> Filter <span class="badge-count" id="filterCount" hidden>0</span>
+          </button>
+          <div class="toolbar__filters" id="filterPanel">
+            <label class="select-wrap"><span class="sr-only">Lokasi</span><select id="fLocation" aria-label="Filter lokasi"></select></label>
+            <label class="select-wrap"><span class="sr-only">Tipe</span><select id="fType" aria-label="Filter tipe"></select></label>
+            <label class="select-wrap"><span class="sr-only">Brand</span><select id="fBrand" aria-label="Filter brand"></select></label>
+            <label class="select-wrap"><span class="sr-only">Harga</span>
+              <select id="fPrice" aria-label="Filter harga">
+                <option value="">Semua Harga</option>
+                <option value="0-400000">&lt; Rp 400 rb</option>
+                <option value="400000-700000">Rp 400 rb – 700 rb</option>
+                <option value="700000-1500000">Rp 700 rb – 1,5 jt</option>
+                <option value="1500000-">&gt; Rp 1,5 jt</option>
+              </select>
+            </label>
+            <label class="select-wrap"><span class="sr-only">Tahun</span><select id="fYear" aria-label="Filter tahun"></select></label>
+            <label class="select-wrap"><span class="sr-only">Urutkan</span>
+              <select id="fSort" aria-label="Urutkan">
+                <option value="recommended">Rekomendasi</option>
+                <option value="price-asc">Harga Termurah</option>
+                <option value="price-desc">Harga Termahal</option>
+                <option value="year-desc">Tahun Terbaru</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="result-bar">
+          <p id="resultInfo" aria-live="polite">Memuat kendaraan…</p>
+          <button type="button" class="link-btn" id="resetFilter" hidden><span data-icon="refresh"></span> Reset Filter</button>
+        </div>
+
+        <div class="car-grid" id="carGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section class="section" id="keunggulan" aria-labelledby="featTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Kenapa Kami</span>
+          <h2 id="featTitle">Pengalaman Rental yang Lebih Tenang</h2>
+          <p>Kami fokus pada hal yang paling penting untuk perjalananmu: unit prima, harga jelas, dan respon cepat.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature reveal">
+            <span class="feature__icon"><span data-icon="shield"></span></span>
+            <h3>Unit Terawat</h3>
+            <p>Setiap kendaraan melalui pengecekan rutin sebelum diserahkan kepada pelanggan.</p>
+          </article>
+          <article class="feature reveal" style="--d:80ms">
+            <span class="feature__icon"><span data-icon="wallet"></span></span>
+            <h3>Harga Transparan</h3>
+            <p>Harga harian, mingguan, dan bulanan tertera jelas. Tidak ada biaya tersembunyi.</p>
+          </article>
+          <article class="feature reveal" style="--d:160ms">
+            <span class="feature__icon"><span data-icon="whatsapp"></span></span>
+            <h3>Booking via WhatsApp</h3>
+            <p>Pilih mobil, isi tanggal, dan pesanan langsung terkirim ke admin kami.</p>
+          </article>
+          <article class="feature reveal" style="--d:240ms">
+            <span class="feature__icon"><span data-icon="pin"></span></span>
+            <h3>Antar-Jemput Unit</h3>
+            <p>Unit dapat diantar ke hotel, rumah, stasiun, atau bandara di area layanan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARA SEWA -->
+    <section class="section section--navy" id="cara-sewa" aria-labelledby="stepsTitle">
+      <div class="container">
+        <div class="section-head section-head--light reveal">
+          <span class="eyebrow eyebrow--light">Cara Sewa</span>
+          <h2 id="stepsTitle">4 Langkah Mudah Sewa Mobil</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><span class="step__num">01</span><h3>Pilih Lokasi</h3><p>Tentukan kota tempat kamu ingin menyewa kendaraan.</p></li>
+          <li class="step reveal" style="--d:80ms"><span class="step__num">02</span><h3>Pilih Mobil</h3><p>Bandingkan unit, spesifikasi, dan harga di katalog.</p></li>
+          <li class="step reveal" style="--d:160ms"><span class="step__num">03</span><h3>Isi Tanggal</h3><p>Masukkan tanggal mulai dan selesai untuk estimasi biaya.</p></li>
+          <li class="step reveal" style="--d:240ms"><span class="step__num">04</span><h3>Konfirmasi WhatsApp</h3><p>Pesan otomatis terkirim, admin akan mengonfirmasi ketersediaan.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section class="section" id="tentang" aria-labelledby="aboutTitle">
+      <div class="container about">
+        <div class="about__visual reveal reveal--left">
+          <img id="aboutImg" alt="Armada kendaraan Nusantara Rental" loading="lazy" width="800" height="500">
+          <div class="about__badge">
+            <strong><span data-counter id="aboutBrands">0</span> brand</strong>
+            <small>pilihan kendaraan</small>
+          </div>
+        </div>
+        <div class="about__content reveal reveal--right">
+          <span class="eyebrow">Tentang Kami</span>
+          <h2 id="aboutTitle">Partner Perjalanan Anda di Seluruh Nusantara</h2>
+          <p><strong data-site-name>Nusantara Rental</strong> adalah layanan rental mobil yang menghadirkan pengalaman sewa kendaraan semudah belanja online. Kami melayani kebutuhan perjalanan bisnis, liburan keluarga, acara pernikahan, hingga rombongan wisata.</p>
+          <p>Dengan armada dari berbagai kelas — city car, MPV, SUV, sedan, hingga kendaraan mewah dan van — kami siap menemani perjalananmu dengan unit yang bersih, nyaman, dan terawat.</p>
+          <div class="stats">
+            <div class="stat"><strong><span data-counter id="statUnits">0</span>+</strong><span>Unit armada</span></div>
+            <div class="stat"><strong><span data-counter id="statCities">0</span></strong><span>Kota layanan</span></div>
+            <div class="stat"><strong><span data-counter id="statTypes">0</span></strong><span>Kelas kendaraan</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--gray" id="faq" aria-labelledby="faqTitle">
+      <div class="container container--narrow">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faqTitle">Pertanyaan yang Sering Diajukan</h2>
+        </div>
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>Siap memulai perjalananmu?</h2>
+            <p>Tim kami siap membantu memilih kendaraan yang paling pas untuk kebutuhanmu.</p>
+          </div>
+          <div class="cta-band__actions">
+            <a href="#katalog" class="btn btn--light btn--lg" data-route>Lihat Katalog</a>
+            <a href="#" class="btn btn--wa btn--lg" data-wa="general" target="_blank" rel="noopener"><span data-icon="whatsapp"></span> Chat Sekarang</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="section" id="kontak" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Contact</span>
+          <h2 id="contactTitle">Hubungi Kami</h2>
+          <p>Pilih kantor terdekat atau hubungi layanan pelanggan utama kami.</p>
+        </div>
+        <div class="contact">
+          <div class="contact__main reveal">
+            <h3 data-site-name>Nusantara Rental</h3>
+            <ul class="contact__list">
+              <li><span data-icon="pin"></span><div><small>Kantor Pusat</small><span data-setting="address">-</span></div></li>
+              <li><span data-icon="phone"></span><div><small>WhatsApp</small><a href="#" data-wa="general" target="_blank" rel="noopener" data-wa-label>-</a></div></li>
+              <li><span data-icon="mail"></span><div><small>Email</small><a href="#" data-setting-mail>-</a></div></li>
+              <li><span data-icon="clock"></span><div><small>Jam Operasional</small><span data-setting="hours">-</span></div></li>
+            </ul>
+            <div class="socials" data-socials></div>
+          </div>
+          <div class="contact__offices" id="officeList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= LOCATION VIEW ================= -->
+  <main id="viewLocation" class="view" hidden></main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#home" class="brand brand--light" data-route>
+          <span class="brand__mark"><img src="assets/logo.png" alt="" class="brand__logo" data-logo width="40" height="40"></span>
+          <span class="brand__text"><strong data-site-name>Nusantara Rental</strong><small>Car Rental</small></span>
+        </a>
+        <p class="footer__tagline" data-tagline>Temukan Mobil Pilihanmu, Jelajahi Indonesia.</p>
+        <p>Solusi rental mobil terpercaya untuk perjalanan Anda.</p>
+        <div class="socials socials--light" data-socials></div>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#home" data-route>Home</a></li>
+          <li><a href="#katalog" data-route>Rental Mobil</a></li>
+          <li><a href="#tentang" data-route>Tentang Kami</a></li>
+          <li><a href="#kontak" data-route>Contact</a></li>
+          <li><a href="#faq" data-route>FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Lokasi</h4>
+        <ul id="footerCities"></ul>
+      </div>
+      <div>
+        <h4>Hubungi</h4>
+        <ul class="footer__contact">
+          <li><span data-icon="whatsapp"></span> <a href="#" data-wa="general" target="_blank" rel="noopener" data-wa-label>-</a></li>
+          <li><span data-icon="mail"></span> <a href="#" data-setting-mail>-</a></li>
+          <li><span data-icon="clock"></span> <span data-setting="hours">-</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 <span data-site-name>Nusantara Rental</span>. All Rights Reserved.</p>
+      <p class="footer__cities" id="footerCityLine">Jakarta | Bandung | Jogja | Surabaya</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="#" class="wa-float" data-wa="floating" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <span data-icon="whatsapp"></span>
+    <span class="wa-float__label">Butuh bantuan?</span>
+  </a>
+
+  <!-- Back to top -->
+  <button class="to-top" id="toTop" aria-label="Kembali ke atas"><span data-icon="chevronDown"></span></button>
+
+  <!-- ================= DETAIL MODAL ================= -->
+  <div class="modal" id="detailModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <button class="modal__close" data-close-modal aria-label="Tutup detail"><span data-icon="x"></span></button>
+      <div class="modal__body" id="detailBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">Website ini membutuhkan JavaScript. Aktifkan JavaScript di browser Anda.</div>
+  </noscript>
+
+  <!-- Database online (Supabase). Atur di js/supabase-config.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.99.3/dist/umd/supabase.js"></script>
+  <script src="js/supabase-config.js" charset="utf-8"></script>
+  <script src="js/data.js" charset="utf-8"></script>
+  <script src="js/cloud.js" charset="utf-8"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+</body>
+</html>
